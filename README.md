@@ -7,6 +7,12 @@ Relative time / time ago for Swift.
 
 2. Copy `TimeAgo.swift` from `./swift-timeago/` into your project.
 
+## API
+
+```swift
+func timeAgoSince(date: NSDate) -> String
+```
+
 ## Usage
 
 ```swift
