@@ -1,0 +1,4 @@
+
+language: objective-c
+xcode_project: swift-timeago.xcodeproj
+xcode_scheme: swift-timeagoTests
