@@ -39,16 +39,6 @@
                ReferencedContainer = "container:swift-timeago.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3B984C5E1B9E22480076EC7A"
-               BuildableName = "swift-timeagoUITests.xctest"
-               BlueprintName = "swift-timeagoUITests"
-               ReferencedContainer = "container:swift-timeago.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
