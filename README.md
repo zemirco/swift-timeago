@@ -1,6 +1,8 @@
 
 # swift-timeago
 
+[![Build Status](https://travis-ci.org/zemirco/swift-timeago.svg)](https://travis-ci.org/zemirco/swift-timeago)
+
 Relative time / time ago for Swift.
 
 ## Installation

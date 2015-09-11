@@ -1,4 +1,8 @@
 
 language: objective-c
+
+osx_image: xcode7
+
 xcode_project: swift-timeago.xcodeproj
+
 xcode_scheme: swift-timeagoTests
