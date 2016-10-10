@@ -4,12 +4,12 @@ import swift_timeago
 
 class swift_timeagoTests: XCTestCase {
     
-    let date = NSDate()
-    let calendar = NSCalendar.currentCalendar()
-    let unitFlags: NSCalendarUnit = [.Second, .Minute, .Hour, .Day, .WeekOfYear, .Month, .Year]
-    var components: NSDateComponents {
+    let date = Date()
+    let calendar = Calendar.current
+    let unitFlags: NSCalendar.Unit = [.second, .minute, .hour, .day, .weekOfYear, .month, .year]
+    var components: DateComponents {
         get {
-            return calendar.components(unitFlags, fromDate: date)
+            return (calendar as NSCalendar).components(unitFlags, from: date)
         }
     }
 
@@ -24,163 +24,163 @@ class swift_timeagoTests: XCTestCase {
     }
     
     func testJustNow() {
-        let result = timeAgoSince(NSDate())
+        let result = timeAgoSince(Date())
         XCTAssertEqual(result, "Just now")
     }
     
     func testSecondsAgo() {
-        let date = NSDateComponents()
+        var date = DateComponents()
         date.year = components.year
         date.month = components.month
         date.day = components.day
         date.hour = components.hour
         date.minute = components.minute
-        date.second = components.second - 5
-        let result = timeAgoSince(calendar.dateFromComponents(date)!)
+        date.second = components.second! - 5
+        let result = timeAgoSince(calendar.date(from: date)!)
         XCTAssertEqual(result, "5 seconds ago")
     }
     
     func testAMinuteAgo() {
-        let date = NSDateComponents()
+        var date = DateComponents()
         date.year = components.year
         date.month = components.month
         date.day = components.day
         date.hour = components.hour
-        date.minute = components.minute - 1
+        date.minute = components.minute! - 1
         date.second = components.second
-        let result = timeAgoSince(calendar.dateFromComponents(date)!)
+        let result = timeAgoSince(calendar.date(from: date)!)
         XCTAssertEqual(result, "A minute ago")
     }
     
     func testMinutesAgo() {
-        let date = NSDateComponents()
+        var date = DateComponents()
         date.year = components.year
         date.month = components.month
         date.day = components.day
         date.hour = components.hour
-        date.minute = components.minute - 20
+        date.minute = components.minute! - 20
         date.second = components.second
-        let result = timeAgoSince(calendar.dateFromComponents(date)!)
+        let result = timeAgoSince(calendar.date(from: date)!)
         XCTAssertEqual(result, "20 minutes ago")
     }
     
     func testAnHourAgo() {
-        let date = NSDateComponents()
+        var date = DateComponents()
         date.year = components.year
         date.month = components.month
         date.day = components.day
-        date.hour = components.hour - 1
+        date.hour = components.hour! - 1
         date.minute = components.minute
         date.second = components.second
-        let result = timeAgoSince(calendar.dateFromComponents(date)!)
+        let result = timeAgoSince(calendar.date(from: date)!)
         XCTAssertEqual(result, "An hour ago")
     }
     
     func testHoursAgo() {
-        let date = NSDateComponents()
+        var date = DateComponents()
         date.year = components.year
         date.month = components.month
         date.day = components.day
-        date.hour = components.hour - 10
+        date.hour = components.hour! - 10
         date.minute = components.minute
         date.second = components.second
-        let result = timeAgoSince(calendar.dateFromComponents(date)!)
+        let result = timeAgoSince(calendar.date(from: date)!)
         XCTAssertEqual(result, "10 hours ago")
     }
     
     func testYesterday() {
-        let date = NSDateComponents()
+        var date = DateComponents()
         date.year = components.year
         date.month = components.month
-        date.day = components.day - 1
+        date.day = components.day! - 1
         date.hour = components.hour
         date.minute = components.minute
         date.second = components.second
-        let result = timeAgoSince(calendar.dateFromComponents(date)!)
+        let result = timeAgoSince(calendar.date(from: date)!)
         XCTAssertEqual(result, "Yesterday")
     }
     
     func testDaysAgo() {
-        let date = NSDateComponents()
+        var date = DateComponents()
         date.year = components.year
         date.month = components.month
-        date.day = components.day - 5
+        date.day = components.day! - 5
         date.hour = components.hour
         date.minute = components.minute
         date.second = components.second
-        let result = timeAgoSince(calendar.dateFromComponents(date)!)
+        let result = timeAgoSince(calendar.date(from: date)!)
         XCTAssertEqual(result, "5 days ago")
     }
     
     func testLastWeek() {
-        let date = NSDateComponents()
+        var date = DateComponents()
         date.year = components.year
         date.month = components.month
-        date.day = components.day - 8
+        date.day = components.day! - 8
         date.hour = components.hour
         date.minute = components.minute
         date.second = components.second
-        let result = timeAgoSince(calendar.dateFromComponents(date)!)
+        let result = timeAgoSince(calendar.date(from: date)!)
         XCTAssertEqual(result, "Last week")
     }
     
     func testWeeksAgo() {
-        let date = NSDateComponents()
+        var date = DateComponents()
         date.year = components.year
         date.month = components.month
-        date.day = components.day - 25
+        date.day = components.day! - 25
         date.hour = components.hour
         date.minute = components.minute
         date.second = components.second
-        let result = timeAgoSince(calendar.dateFromComponents(date)!)
+        let result = timeAgoSince(calendar.date(from: date)!)
         XCTAssertEqual(result, "3 weeks ago")
     }
     
     func testLastMonth() {
-        let date = NSDateComponents()
+        var date = DateComponents()
         date.year = components.year
-        date.month = components.month - 1
+        date.month = components.month! - 1
         date.day = components.day
         date.hour = components.hour
         date.minute = components.minute
         date.second = components.second
-        let result = timeAgoSince(calendar.dateFromComponents(date)!)
+        let result = timeAgoSince(calendar.date(from: date)!)
         XCTAssertEqual(result, "Last month")
     }
     
     func testMonthsAgo() {
-        let date = NSDateComponents()
+        var date = DateComponents()
         date.year = components.year
-        date.month = components.month - 6
+        date.month = components.month! - 6
         date.day = components.day
         date.hour = components.hour
         date.minute = components.minute
         date.second = components.second
-        let result = timeAgoSince(calendar.dateFromComponents(date)!)
+        let result = timeAgoSince(calendar.date(from: date)!)
         XCTAssertEqual(result, "6 months ago")
     }
     
     func testLastYear() {
-        let date = NSDateComponents()
-        date.year = components.year - 1
+        var date = DateComponents()
+        date.year = components.year! - 1
         date.month = components.month
         date.day = components.day
         date.hour = components.hour
         date.minute = components.minute
         date.second = components.second
-        let result = timeAgoSince(calendar.dateFromComponents(date)!)
+        let result = timeAgoSince(calendar.date(from: date)!)
         XCTAssertEqual(result, "Last year")
     }
     
     func testYearsAgo() {
-        let date = NSDateComponents()
-        date.year = components.year - 10
+        var date = DateComponents()
+        date.year = components.year! - 10
         date.month = components.month
         date.day = components.day
         date.hour = components.hour
         date.minute = components.minute
         date.second = components.second
-        let result = timeAgoSince(calendar.dateFromComponents(date)!)
+        let result = timeAgoSince(calendar.date(from: date)!)
         XCTAssertEqual(result, "10 years ago")
     }
     

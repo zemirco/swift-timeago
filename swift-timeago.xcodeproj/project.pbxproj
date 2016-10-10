@@ -13,7 +13,7 @@
 		3B984C4B1B9E22480076EC7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B984C4A1B9E22480076EC7A /* Assets.xcassets */; };
 		3B984C4E1B9E22480076EC7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B984C4C1B9E22480076EC7A /* LaunchScreen.storyboard */; };
 		3B984C591B9E22480076EC7A /* swift_timeagoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B984C581B9E22480076EC7A /* swift_timeagoTests.swift */; };
-		3B984C721B9E22640076EC7A /* TimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B984C711B9E22640076EC7A /* TimeAgo.swift */; settings = {ASSET_TAGS = (); }; };
+		3B984C721B9E22640076EC7A /* TimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B984C711B9E22640076EC7A /* TimeAgo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,9 +148,11 @@
 				TargetAttributes = {
 					3B984C3F1B9E22480076EC7A = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0800;
 					};
 					3B984C531B9E22480076EC7A = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0800;
 						TestTargetID = 3B984C3F1B9E22480076EC7A;
 					};
 				};
@@ -334,6 +336,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "zemirco.swift-timeago";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -345,6 +348,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "zemirco.swift-timeago";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -356,6 +360,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "zemirco.swift-timeagoTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/swift-timeago.app/swift-timeago";
 			};
 			name = Debug;
@@ -368,6 +373,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "zemirco.swift-timeagoTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/swift-timeago.app/swift-timeago";
 			};
 			name = Release;
@@ -391,6 +397,7 @@
 				3B984C6A1B9E22480076EC7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3B984C6B1B9E22480076EC7A /* Build configuration list for PBXNativeTarget "swift-timeagoTests" */ = {
 			isa = XCConfigurationList;
@@ -399,6 +406,7 @@
 				3B984C6D1B9E22480076EC7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
